@@ -1,6 +1,7 @@
 # [Replace this with your project title]
 
 ## About Me
+I am a rising sophomore in CS
 
 ## The Premise
 
