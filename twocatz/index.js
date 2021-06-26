@@ -1,8 +1,7 @@
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    const name = (req.query.name || (req.body && req.body.name));
     let resp = await fetch("https://cataas.com/cat/cute/says/Serverless", {
         method: 'GET'
     });
