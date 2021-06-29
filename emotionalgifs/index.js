@@ -21,7 +21,7 @@ module.exports = async function (context, req) {
 
     const main_emotion = Object.keys(emotions).find(key => emotions[key] === Math.max(...objects));
 
-    let gifurl=await findGifs(main_emotion);
+    var gifurl=await findGifs(main_emotion);
 
 
 
