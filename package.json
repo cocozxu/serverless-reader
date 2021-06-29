@@ -6,6 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "morse-code-converter": "^1.0.2",
+    "node-fetch": "^2.6.1",
+    "parse-multipart": "^1.0.4"
+  }
 }
