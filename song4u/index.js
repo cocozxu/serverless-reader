@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
     let data = await resp.arrayBuffer()
     var result = await analyzeImage(data);
     let age = result[0].faceAttributes.age
-    let id=0;
+    let id="";
     if (age > 5 && age < 25) {
         id = "GenZ"
     }
