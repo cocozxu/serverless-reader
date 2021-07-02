@@ -9,9 +9,9 @@ module.exports = async function (context, req) {
     })
 
     let data = await resp.arrayBuffer()
-    var result = await analyzeImage(imageData);
+    var result = await analyzeImage(data);
     let age = result[0].faceAttributes.age
-    let id;
+    let id=0;
     if (age > 5 && age < 25) {
         id = "GenZ"
     }
@@ -34,7 +34,7 @@ module.exports = async function (context, req) {
 }
 
 async function analyzeImage(img){
-    const subscriptionKey = process.env.SUBSCRIPTIONKEY1;
+    const subscriptionKey = process.env.['subscriptionkey'];
     const uriBase = process.env.ENDPOINT + '/face/v1.0/detect';
     let params = new URLSearchParams({
         'returnFaceId': 'true',
@@ -50,23 +50,4 @@ async function analyzeImage(img){
     })
     let emotionData = await resp.json()
     return emotionData;
-}
-
-function genDetermine(age){
-    let id;
-    if (age > 5 && age < 25) {
-        id = "GenZ"
-    }
-    else if (age > 24 && age < 41) {
-        id = "GenY"
-    }
-    else if (age > 40 && age < 57) {
-        id = "GenX"
-    }
-    else if (age > 56 && age < 76) {
-        id = "BabyBoomers"
-    }
-    else{
-        id = "Unknown"
-    }
 }
