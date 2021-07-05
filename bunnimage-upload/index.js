@@ -3,12 +3,12 @@ const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
 const { BlobServiceClient } = require("@azure/storage-blob");
 module.exports = async function (context, req) {
     var the_header_value = req.headers['codename'];
+    var boundary = multipart.getBoundary(req.headers['content-type']); 
 
     var responseMessage = ""
     if (body == null) {
     responseMessage = "Sorry! No image attached."
     } else {
-    var boundary = multipart.getBoundary(req.headers['content-type']); 
     var body = req.body;
     var parsedBody = multipart.Parse(body, boundary);
     var password = the_header_value// get the header called "codename"
@@ -20,7 +20,7 @@ module.exports = async function (context, req) {
     } else if (filetype == "image/jpg") {
     ext = "jpg"
     } else {
-    username = "invalidimage"
+    password = "invalidimage"
     ext = "";
     }
     responseMessage = await uploadFile(parsedBody, ext, password);
@@ -30,8 +30,6 @@ module.exports = async function (context, req) {
     context.res = {
     body: responseMessage
     };
-
-   
 }
 async function uploadFile(parsedBody, ext,password){
     const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
@@ -42,5 +40,6 @@ async function uploadFile(parsedBody, ext,password){
     const blockBlobClient = containerClient.getBlockBlobClient(blobName); // Get a block blob client
 
     const uploadBlobResponse = await blockBlobClient.upload(parsedBody[0].data, parsedBody[0].data.length);
+    return "file uploaded";
 
 }
