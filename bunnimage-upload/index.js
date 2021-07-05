@@ -5,7 +5,13 @@ module.exports = async function (context, req) {
     var boundary = multipart.getBoundary(req.headers['content-type']);
     var body = req.body;
     var parsedBody = multipart.Parse(body, boundary);
+    var the_header_value = req.headers['codename'];
 
+    var responseMessage = ""
+    if (body == null) {
+    responseMessage = "Sorry! No image attached."
+    } else {
+    var password = the_header_value// get the header called "codename"
     var filetype = parsedBody[0].type;
     if (filetype == "image/png") {
     ext = "png";
@@ -17,20 +23,22 @@ module.exports = async function (context, req) {
     username = "invalidimage"
     ext = "";
     }
+    responseMessage = await uploadFile(parsedBody, ext, password);
+    }
 
-    var responseMessage = await uploadFile(parsedBody, ext);
+
     context.res = {
-    body: "file saved"
+    body: responseMessage
     };
 
    
 }
-async function uploadFile(parsedBody, ext){
+async function uploadFile(parsedBody, ext,password){
     const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
     const containerName = 'image';
     const containerClient = blobServiceClient.getContainerClient(containerName);    // Get a reference to a container
 
-    const blobName = 'test.' + ext;    // Create the container
+    const blobName = password + ext;    // Create the container
     const blockBlobClient = containerClient.getBlockBlobClient(blobName); // Get a block blob client
 
     const uploadBlobResponse = await blockBlobClient.upload(parsedBody[0].data, parsedBody[0].data.length);
