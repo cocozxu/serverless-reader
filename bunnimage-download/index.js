@@ -3,7 +3,7 @@ module.exports = async function (context, req) {
     var username = req.headers['username'];
     var download = ""
     var downloadpng = "https://createmystorageaccoun.blob.core.windows.net/image/" + username + ".png";
-    var downloadjpg = "https://createmystorageaccoun.blob.core.windows.net/image/" + username + ".jpeg";
+    var downloadjpg = "https://createmystorageaccoun.blob.core.windows.net/image/" + username + ".jpg";
     let pngresp = await fetch(downloadpng, {
         method: 'GET',
      })
