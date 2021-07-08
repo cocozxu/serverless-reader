@@ -1,5 +1,5 @@
 {
-  "name": "serverless-reader",
+  "name": "intro-to-serverless",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,7 +7,6 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "morse": "^0.1.0",
     "node-fetch": "^2.6.1"
   }
 }
