@@ -4,21 +4,20 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 module.exports = async function (context, req) {
     var the_header_value = req.headers['codename'];
     var boundary = multipart.getBoundary(req.headers['content-type']); 
-
+    var body = req.body;
     var responseMessage = ""
     if (body == null) {
     responseMessage = "Sorry! No image attached."
     } else {
-    var body = req.body;
     var parsedBody = multipart.Parse(body, boundary);
     var password = the_header_value// get the header called "codename"
     var filetype = parsedBody[0].type;
     if (filetype == "image/png") {
-    ext = "png";
+    ext = ".png";
     } else if (filetype == "image/jpeg") {
-    ext = "jpeg";
+    ext = ".jpeg";
     } else if (filetype == "image/jpg") {
-    ext = "jpg"
+    ext = ".jpg"
     } else {
     password = "invalidimage"
     ext = "";
