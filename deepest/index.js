@@ -47,6 +47,7 @@ async function createDocument(newItem){
     };
     const { resources: items } = await container.items.query(querySpec).fetchAll();
     const {resource: createdItem} = await container.items.create(newItem);
+    return container.items;
     
 
 }
