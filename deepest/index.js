@@ -16,8 +16,10 @@ module.exports = async function (context, req) {
     let message = queryObject.Body;
     let document = { "message": message }
     let items = await createDocument(document)
+    var random_value = Math.floor(items.length * Math.random());
 
-    const responseMessage = `Thanks 😊! Stored your secret "${message}". 😯 Someone confessed that: ${JSON.stringify(items[0].message)}`;
+
+    const responseMessage = `Thanks 😊! Stored your secret "${message}". 😯 Someone confessed that: ${JSON.stringify(items[random_value].message)}`;
 
     context.res = {
         body: responseMessage
@@ -45,8 +47,9 @@ async function createDocument(newItem) {
     await create(client, databaseId, containerId);
     
     const querySpec = {
-    query: "SELECT top 1 * FROM c order by c._ts desc"
-    };
+    query: "SELECT * from c"
+};
+
 
     const { resources: items } = await container.items.query(querySpec).fetchAll();
     const {resource: createdItem} = await container.items.create(newItem);
