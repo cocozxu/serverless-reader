@@ -1,5 +1,9 @@
-function getImage(){
-    if(document.getElementById("name".value!='')){
-        s('#output').text(document.getElementById("name").value+"❤️")
+function getImage(event){
+    event.preventDefault();
+    if(document.getElementById("username").value!=null){
+        $('#output').text("Thanks")
+    }
+    else{
+        alert("No name")
     }
 }
