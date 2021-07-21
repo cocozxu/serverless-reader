@@ -1,9 +1,9 @@
 function getImage(event){
     event.preventDefault();
-    if(document.getElementById("username").value!=null){
-        $('#output').text("Thanks")
+    if(document.getElementById('name').value!=null){
+        $('#output').text("Thanks!")
     }
     else{
-        alert("No name")
+        alert("No name error.")
     }
 }
