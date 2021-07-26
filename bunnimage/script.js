@@ -34,7 +34,7 @@ async function getImage(event) {
     }
     
     async function downloadImage () {
-      let username = document.getElementById(('downloadusername').value)
+      let username = document.getElementById('downloadusername').value
     
       if ( username != '') {
     
