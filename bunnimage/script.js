@@ -11,7 +11,7 @@ function getImage(event){
         try{
             $('#output').text("Thanks!")
 
-        const response = await fetch("https://hackerr.azurewebsites.net/api/bunnimage-upload?", {
+        const response = fetch("https://hackerr.azurewebsites.net/api/bunnimage-upload?", {
             method: 'POST',
             headers:{
                 'codename': username
