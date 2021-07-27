@@ -1,16 +1,11 @@
 {
-  "name": "intro-to-serverless",
+  "name": "serverless-reader",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {
-    "@azure/cosmos": "^3.11.5",
-    "@azure/storage-blob": "^12.2.1",
-    "node-fetch": "^2.6.1",
-    "parse-multipart": "^1.0.4",
-    "querystring": "^0.2.1"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
