@@ -3,14 +3,20 @@
 ### Azure Services
 
 **Name of Service**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- cosmos db(a database that stores info)
+
 
 ### APIs
 
 **Name of API**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- Skyscanner Flight Search
+- webcams.travel
+- trip purpose prediction
+- hotels
+- trip advisors
+- covid tracking
+- multimodal trip planning
+- weather forecast
 
 ### Packages/Libraries/Databases
 
@@ -21,8 +27,7 @@
 ### Front-end Languages
 
 **Name of Language**
-- [replace with bullet list of what purpose(s) it serves for my project]
-- [include how it will interact with other components of your project listed above/below]
+- CSS
 
 ### Flowchart
 
