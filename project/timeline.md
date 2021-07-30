@@ -6,11 +6,10 @@
 ### [Task Name]:
 
 #### Description
-- [Replace with description]
+-  creating Azure functions by calling the APIs that you require for your idea to work.
 
 #### ETA:
-> How long do you think it will take to complete this?
-- [Replace with eta]
+> 17h
 
 #### Objective:
 > Checklist of everything you need to do to complete this issue
@@ -19,6 +18,14 @@
 - [ ] [Replace with small task  3]
 
 ## Week 2
+
+### [Task Name]:
+
+#### Description
+-   creating a website which will be using these APIs
+
+#### ETA:
+> 15h
 
 ## Week 3
 
